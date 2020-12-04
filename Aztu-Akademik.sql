@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Aztu-Akademik]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Database [Aztu-Akademik]    Script Date: 12/5/2020 3:18:27 AM ******/
 CREATE DATABASE [Aztu-Akademik]
  CONTAINMENT = NONE
 GO
@@ -71,887 +71,1181 @@ ALTER DATABASE [Aztu-Akademik] SET TARGET_RECOVERY_TIME = 0 SECONDS
 GO
 USE [Aztu-Akademik]
 GO
-/****** Object:  Table [dbo].[A_Saheleri_Adlari]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[Announcement]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[A_Saheleri_Adlari](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Kafedra_Id] [int] NULL,
-	[Ad] [nvarchar](max) NULL,
- CONSTRAINT [PK_Table_1] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[Announcement](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[title] [nvarchar](500) NULL,
+	[description] [nvarchar](max) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[researcher_id] [int] NULL,
+ CONSTRAINT [PK_Announcement] PRIMARY KEY CLUSTERED 
 (
-	[ID] ASC
+	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Administrativ_vezifeler]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[Article]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Administrativ_vezifeler](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[vezife_ad] [nvarchar](50) NOT NULL,
- CONSTRAINT [PK_Administrativ_vezifeler] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Arasdirma_Saheleri]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Arasdirma_Saheleri](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Sahe_Id] [int] NULL,
-	[Arasdirmaci_Id] [int] NULL,
- CONSTRAINT [PK_Arasdirma_Saheleri] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Arasdirmaci_administrativ_vezife]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Arasdirmaci_administrativ_vezife](
-	[Arasdirmaci_ID] [int] NULL,
-	[Administrativ_vezife_ID] [int] NULL
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Arasdirmaci_Dil]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Arasdirmaci_Dil](
+CREATE TABLE [dbo].[Article](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[xarici_dil_id] [int] NULL,
-	[dil_seviyye] [tinyint] NULL,
-	[arasdirmaci_id] [int] NULL,
- CONSTRAINT [PK_Arasdirmaci_Dil] PRIMARY KEY CLUSTERED 
+	[name] [nvarchar](max) NULL,
+	[description] [nvarchar](max) NULL,
+	[date] [datetime] NULL,
+	[volume] [nvarchar](max) NULL,
+	[page_start] [int] NULL,
+	[page_end] [int] NULL,
+	[url] [nvarchar](max) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[creator_id] [int] NULL,
+	[file_id] [bigint] NULL,
+	[journal_id] [int] NULL,
+ CONSTRAINT [PK_Article] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Certificate]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Certificate](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](max) NULL,
+	[description] [nvarchar](max) NULL,
+	[start_date] [datetime] NULL,
+	[end_date] [datetime] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[researcher_id] [int] NULL,
+	[file_id] [bigint] NULL,
+ CONSTRAINT [PK_Certificate] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Contact]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Contact](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](1000) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[type_id] [smallint] NULL,
+	[researcher_id] [int] NULL,
+ CONSTRAINT [PK_Contact] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Arasdirmaci_Meqale]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[ContactType]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Arasdirmaci_Meqale](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Arasdirmaci_ID] [int] NULL,
-	[Meqale_ID] [int] NULL,
-	[Elmi_Rehber] [bit] NULL,
- CONSTRAINT [PK_Arasdirmaci_Meqale] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[ContactType](
+	[id] [smallint] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](1000) NULL,
+	[icon] [nvarchar](max) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_ContactType] PRIMARY KEY CLUSTERED 
 (
-	[Id] ASC
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Country]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Country](
+	[id] [smallint] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](1000) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_Country] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Arasdirmaci_pedoqoji_ad]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[Department]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Arasdirmaci_pedoqoji_ad](
-	[Arasdirmaci_pedoqoji_Ad_ID] [int] IDENTITY(1,1) NOT NULL,
-	[Arasdirmaci_ad] [nvarchar](20) NULL,
- CONSTRAINT [PK_Arasdirmaci_pedoqoji_ad] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[Department](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](1000) NULL,
+	[short_name] [nvarchar](100) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[faculty_id] [int] NULL,
+ CONSTRAINT [PK_Department] PRIMARY KEY CLUSTERED 
 (
-	[Arasdirmaci_pedoqoji_Ad_ID] ASC
+	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Arasdirmacilar]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[Dissertation]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Arasdirmacilar](
-	[ID] [int] IDENTITY(1000,1) NOT NULL,
-	[Arasdirmaci_Ad] [nvarchar](50) NULL,
-	[Arasdirmaci_Soyad] [nvarchar](50) NULL,
-	[Kafedra_ID] [int] NULL,
-	[Tehsil_seviyyesi_ID] [int] NULL,
-	[Mesleki_Idari_Deneyim_iD] [int] NULL,
-	[Arasdirmaci_emeil] [nvarchar](50) NULL,
-	[Arasdirmaci_password] [nvarchar](50) NULL,
-	[Arasdirmaci_pedoqoji_ad_ID] [int] NULL,
-	[cv_adres] [nvarchar](500) NULL,
-	[profil_shekil] [nvarchar](500) NULL,
-	[rol_id] [int] NULL,
- CONSTRAINT [PK_Arasdirmacilar2] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[Dissertation](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](max) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[education_id] [int] NULL,
+	[file_id] [bigint] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_Dissertation] PRIMARY KEY CLUSTERED 
 (
-	[ID] ASC
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[EducationDegree]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[EducationDegree](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](200) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_EducationDegree] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Arasdirmacilar_Elmi_jurnaldaki_vezifeleri]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[EducationForm]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Arasdirmacilar_Elmi_jurnaldaki_vezifeleri](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[arasdirmaci_ID] [int] NULL,
-	[elmi_jurnaldaki_vezife_ID] [int] NULL,
- CONSTRAINT [PK_Arasdirmacilar_Elmi_jurnaldaki_vezifeleri_1] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[EducationForm](
+	[id] [smallint] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](1000) NULL,
+	[description] [nvarchar](max) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_EducationForm] PRIMARY KEY CLUSTERED 
 (
-	[Id] ASC
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[EducationLevel]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[EducationLevel](
+	[id] [smallint] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](1000) NULL,
+	[description] [nvarchar](max) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_EducationLevel] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[EducationOrganization]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[EducationOrganization](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](1000) NULL,
+	[short_name] [nvarchar](100) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[type_id] [tinyint] NULL,
+ CONSTRAINT [PK_EducationOrganization] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Bakalavriat_siyahi]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[EducationOrganizationType]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Bakalavriat_siyahi](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Bakalavr_Universitet] [int] NULL,
-	[Bakalavr_baslangic_il] [date] NULL,
-	[Bakalavr_bitis_il] [date] NULL,
-	[Bakalavr_disertasiya_ad] [nvarchar](70) NULL,
-	[Bakalavr_disertasiya_PDF_ID] [int] NULL,
- CONSTRAINT [PK_Bakalavriat_seviyyes] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Ders_arasdirmaci]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Ders_arasdirmaci](
-	[ders_ID] [int] NULL,
-	[Arasdirmaci_ID] [int] NULL
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Dersler]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Dersler](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Kafedra_ID] [int] NULL,
-	[Ders_Seviyye] [nvarchar](20) NULL,
- CONSTRAINT [PK_Dersler] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Dil_Seviyye]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Dil_Seviyye](
+CREATE TABLE [dbo].[EducationOrganizationType](
 	[id] [tinyint] IDENTITY(1,1) NOT NULL,
-	[seviyye_ad] [nvarchar](50) NULL,
- CONSTRAINT [PK_Dil_Seviyye] PRIMARY KEY CLUSTERED 
+	[name] [nvarchar](1000) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_EducationOrganizationType] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Elanlar]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[ExternalResearcher]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Elanlar](
+CREATE TABLE [dbo].[ExternalResearcher](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[ad] [nvarchar](200) NULL,
-	[aciqlama] [nvarchar](max) NULL,
-	[arasdirmaci_id] [int] NULL,
- CONSTRAINT [PK_Elanlar] PRIMARY KEY CLUSTERED 
+	[name] [nvarchar](max) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[organization_id] [int] NULL,
+ CONSTRAINT [PK_ExternalResearcher] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Elaqe]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[Faculty]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Elaqe](
+CREATE TABLE [dbo].[Faculty](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[email] [nchar](50) NULL,
-	[web_site] [nvarchar](100) NULL,
-	[facebook] [nvarchar](500) NULL,
-	[linkedin] [nvarchar](500) NULL,
-	[instagram] [nvarchar](500) NULL,
-	[scopus_link] [nvarchar](500) NULL,
-	[google_scholar_link] [nvarchar](500) NULL,
-	[number] [nvarchar](100) NULL,
-	[arasdirmaci_id] [int] NULL,
- CONSTRAINT [PK_Elaqe] PRIMARY KEY CLUSTERED 
+	[name] [nvarchar](1000) NULL,
+	[short_name] [nvarchar](50) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_Faculty] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Elmi_jurnaldaki_vezifeler]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[File]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Elmi_jurnaldaki_vezifeler](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Vezife_ad] [nvarchar](50) NULL,
- CONSTRAINT [PK_Elmi_jurnaldaki_vezifeler] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[File](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](max) NULL,
+	[type] [tinyint] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[user_id] [int] NULL,
+ CONSTRAINT [PK_File] PRIMARY KEY CLUSTERED 
 (
-	[ID] ASC
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Journal]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Journal](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](max) NULL,
+	[indexed] [tinyint] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_Journal] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Language]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Language](
+	[id] [smallint] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](1000) NULL,
+	[iso_639_1] [nvarchar](1000) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_Language] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Elmler_doktorlugu_siyahi]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[LanguageLevels]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Elmler_doktorlugu_siyahi](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[elmler_doktoru_universitet_ID] [int] NULL,
-	[elmler_doktoru_baslangic_il] [date] NULL,
-	[elmler_doktoru_bitis_il] [date] NULL,
-	[elmler_doktoru_disertasiya_ad] [nvarchar](500) NULL,
-	[elmler_doktoru__disertasiya_PDF_ID] [int] NULL,
- CONSTRAINT [PK_Elmler_doktorlugu_siyahi] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[LanguageLevels](
+	[id] [smallint] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](500) NULL,
+	[short_name] [nvarchar](50) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_LanguageLevels] PRIMARY KEY CLUSTERED 
 (
-	[ID] ASC
+	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[elmler_namizedlik_siyahi]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[Log]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[elmler_namizedlik_siyahi](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[elmler_namizedi_universitet_ID] [int] NULL,
-	[elmler_namizedi_baslangic_il] [date] NULL,
-	[elmler_namizedi_bitis_il] [date] NULL,
-	[elmler_namizedi_disertasiya_ad] [nvarchar](100) NOT NULL,
-	[elmler_namizedi_disertasiya_PDF_ID] [int] NULL,
- CONSTRAINT [PK_elmler_namizedlik_siyahi] PRIMARY KEY CLUSTERED 
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Log](
+	[id] [bigint] IDENTITY(1,1) NOT NULL,
+	[table_name] [nvarchar](200) NULL,
+	[ipAddress] [nvarchar](300) NULL,
+	[description] [nvarchar](max) NULL,
+	[additional_information] [varchar](500) NULL,
+	[create_date] [datetime] NULL,
+	[ref_id] [int] NULL,
+	[user_id] [int] NULL,
+	[operation_id] [tinyint] NULL,
+ CONSTRAINT [PK_Log] PRIMARY KEY CLUSTERED 
 (
-	[ID] ASC
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[ManagementExperience]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ManagementExperience](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](1000) NULL,
+	[start_date] [datetime] NULL,
+	[end_date] [datetime] NULL,
+	[researcher_id] [int] NULL,
+	[organization_id] [int] NULL,
+ CONSTRAINT [PK_ManagementExperience] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Fakulteler]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[Operation]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Fakulteler](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Fakulte_Ad] [nvarchar](10) NULL,
-	[Kafedra_ID] [int] NULL,
- CONSTRAINT [PK_Fakulteler] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Is_tecrubesi]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Is_tecrubesi](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Is_vezife] [nvarchar](250) NOT NULL,
-	[Is_yeri] [nvarchar](300) NULL,
-	[Is_baslangic_tarixi] [date] NULL,
-	[Is_bitis_tarixi] [date] NULL,
-	[arasdirmaci_id] [int] NULL,
- CONSTRAINT [PK_Is_tecrubesi] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Jurnallar]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Jurnallar](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Jurnal_ad] [nvarchar](50) NULL,
- CONSTRAINT [PK_Jurnallar] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[kafedralar]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[kafedralar](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Kafedra_Ad] [nvarchar](50) NULL,
- CONSTRAINT [PK_kafedralar2] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Magistrantura_siyahisi]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Magistrantura_siyahisi](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Magistr_Universitet_ID] [int] NULL,
-	[Magistr_baslangic_il] [date] NULL,
-	[Magistr_bitis_il] [date] NULL,
-	[Magistr_disertasiya_ad] [nvarchar](70) NOT NULL,
-	[Magistr_disertasiya_PDF_ID] [int] NULL,
- CONSTRAINT [PK_Magistrantura_siyahisi] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Meqale_Nov]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Meqale_Nov](
+CREATE TABLE [dbo].[Operation](
 	[id] [tinyint] IDENTITY(1,1) NOT NULL,
-	[Meqale_Nov_Ad] [nvarchar](50) NULL,
- CONSTRAINT [PK_Meqale_Nov] PRIMARY KEY CLUSTERED 
+	[name] [nvarchar](100) NULL,
+ CONSTRAINT [PK_Operation] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Meqaleler]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[PasswordReset]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Meqaleler](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Meqale_Ad] [nvarchar](500) NULL,
-	[Meqale_Haqqinda] [nvarchar](max) NULL,
-	[Meqale_il] [date] NULL,
-	[Meqale_nov_Id] [tinyint] NULL,
-	[Olke] [nvarchar](60) NULL,
-	[Universitet_Id] [int] NULL,
-	[Sahe_Id] [int] NULL,
-	[Meqale_jurnal_ID] [int] NULL,
-	[Indeks_Meqale] [bit] NULL,
- CONSTRAINT [PK_Meqale] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Mesleki_Idari_Deneyim]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Mesleki_Idari_Deneyim](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[Mesleki-idari_Deneyim_Ad] [nvarchar](50) NULL,
- CONSTRAINT [PK_Mesleki_Idari_Deneyim] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Mukafatlar]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Mukafatlar](
+CREATE TABLE [dbo].[PasswordReset](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[Arasdirmaci_ID] [int] NULL,
-	[Mukafat_ad] [nvarchar](50) NULL,
- CONSTRAINT [PK_Mukafatlar] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Patentler]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Patentler](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Patent_Ad] [nvarchar](60) NULL,
-	[Arasdirmaci_ID] [int] NULL,
- CONSTRAINT [PK_Patentler] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Pdfler]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Pdfler](
-	[ID] [int] IDENTITY(10000,1) NOT NULL,
-	[Meqale_ID] [int] NOT NULL,
-	[PDF_Location] [text] NOT NULL,
- CONSTRAINT [PK_Pdfler] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Rol]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Rol](
-	[id] [int] IDENTITY(1,1) NOT NULL,
-	[rol_ad] [nvarchar](10) NULL,
- CONSTRAINT [PK_Rol] PRIMARY KEY CLUSTERED 
-(
-	[id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Sertifikatlar]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Sertifikatlar](
-	[id] [int] IDENTITY(1,1) NOT NULL,
-	[Sertifikat_ad] [nvarchar](70) NULL,
-	[Arasdirmaci_ID] [int] NULL,
-	[Aciqlama] [nvarchar](200) NULL,
-	[sertifikat_link] [nvarchar](500) NULL,
-	[pdf_adres] [nvarchar](max) NULL,
- CONSTRAINT [PK_Sertifikatlar] PRIMARY KEY CLUSTERED 
+	[code] [nvarchar](100) NULL,
+	[hash] [nvarchar](max) NULL,
+	[user_id] [int] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_PasswordReset] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Tehsil_seviyye]    Script Date: 9/16/2020 12:44:47 PM ******/
+/****** Object:  Table [dbo].[Patent]    Script Date: 12/5/2020 3:18:27 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Tehsil_seviyye](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Bakalavr_ID] [int] NULL,
-	[Magistr_ID] [int] NULL,
-	[elmler_namizedi_ID] [int] NULL,
-	[elmler_doktoru] [int] NULL,
-	[arasdirmaci_id] [int] NULL,
- CONSTRAINT [PK_Tehsil_seviyye] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Universitetler]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Universitetler](
-	[ID] [int] IDENTITY(1,1) NOT NULL,
-	[Universitet_Ad] [nvarchar](50) NULL,
- CONSTRAINT [PK_Universitetler] PRIMARY KEY CLUSTERED 
-(
-	[ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-/****** Object:  Table [dbo].[Xarici_Dil]    Script Date: 9/16/2020 12:44:47 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Xarici_Dil](
+CREATE TABLE [dbo].[Patent](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[ad] [nvarchar](100) NULL,
- CONSTRAINT [PK_Xarici_Dil] PRIMARY KEY CLUSTERED 
+	[name] [nvarchar](max) NULL,
+	[apply_date] [datetime] NULL,
+	[registration_date] [datetime] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[organization_id] [int] NULL,
+	[researcher_id] [int] NULL,
+ CONSTRAINT [PK_Patent] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Position]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Position](
+	[id] [int] NOT NULL,
+	[name] [nvarchar](max) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_Position] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Profession]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Profession](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](1000) NULL,
+	[department_id] [int] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_Profession] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
 GO
-SET IDENTITY_INSERT [dbo].[A_Saheleri_Adlari] ON 
+/****** Object:  Table [dbo].[Project]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Project](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](max) NULL,
+	[description] [nvarchar](max) NULL,
+	[start_date] [datetime] NULL,
+	[end_date] [datetime] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[organization_id] [int] NULL,
+	[researcher_id] [int] NULL,
+ CONSTRAINT [PK_Project] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
-INSERT [dbo].[A_Saheleri_Adlari] ([ID], [Kafedra_Id], [Ad]) VALUES (1, NULL, N'Elm-texnika')
-SET IDENTITY_INSERT [dbo].[A_Saheleri_Adlari] OFF
-SET IDENTITY_INSERT [dbo].[Arasdirma_Saheleri] ON 
+GO
+/****** Object:  Table [dbo].[Rel_ArticleResearcher]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Rel_ArticleResearcher](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[article_id] [int] NULL,
+	[int_author_id] [int] NULL,
+	[ext_author_id] [int] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[type] [tinyint] NULL,
+ CONSTRAINT [PK_Rel_ArticleResearcher] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-INSERT [dbo].[Arasdirma_Saheleri] ([ID], [Sahe_Id], [Arasdirmaci_Id]) VALUES (1, 1, 1005)
-SET IDENTITY_INSERT [dbo].[Arasdirma_Saheleri] OFF
-SET IDENTITY_INSERT [dbo].[Arasdirmaci_Dil] ON 
+GO
+/****** Object:  Table [dbo].[Rel_PatentResearcher]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Rel_PatentResearcher](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[type] [nvarchar](50) NULL,
+	[patent_id] [int] NULL,
+	[int_author_id] [int] NULL,
+	[ext_author_id] [int] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_Rel_PatentResearcher] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-INSERT [dbo].[Arasdirmaci_Dil] ([id], [xarici_dil_id], [dil_seviyye], [arasdirmaci_id]) VALUES (1, 1, 4, 1005)
-SET IDENTITY_INSERT [dbo].[Arasdirmaci_Dil] OFF
-SET IDENTITY_INSERT [dbo].[Arasdirmaci_Meqale] ON 
+GO
+/****** Object:  Table [dbo].[Rel_ProjectResearcher]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Rel_ProjectResearcher](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[type] [nvarchar](50) NULL,
+	[project_id] [int] NULL,
+	[int_author_id] [int] NULL,
+	[ext_author_id] [int] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_Rel_ProjectResearcher] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-INSERT [dbo].[Arasdirmaci_Meqale] ([Id], [Arasdirmaci_ID], [Meqale_ID], [Elmi_Rehber]) VALUES (1, 1006, 1, NULL)
-INSERT [dbo].[Arasdirmaci_Meqale] ([Id], [Arasdirmaci_ID], [Meqale_ID], [Elmi_Rehber]) VALUES (5, 1005, 2, NULL)
-INSERT [dbo].[Arasdirmaci_Meqale] ([Id], [Arasdirmaci_ID], [Meqale_ID], [Elmi_Rehber]) VALUES (8, 1007, 2, NULL)
-SET IDENTITY_INSERT [dbo].[Arasdirmaci_Meqale] OFF
-SET IDENTITY_INSERT [dbo].[Arasdirmacilar] ON 
+GO
+/****** Object:  Table [dbo].[Rel_Researcher_ResearcherArea]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Rel_Researcher_ResearcherArea](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[researcher_id] [int] NULL,
+	[area_id] [int] NULL,
+ CONSTRAINT [PK_Rel_Researcher_ResearcherArea] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-INSERT [dbo].[Arasdirmacilar] ([ID], [Arasdirmaci_Ad], [Arasdirmaci_Soyad], [Kafedra_ID], [Tehsil_seviyyesi_ID], [Mesleki_Idari_Deneyim_iD], [Arasdirmaci_emeil], [Arasdirmaci_password], [Arasdirmaci_pedoqoji_ad_ID], [cv_adres], [profil_shekil], [rol_id]) VALUES (1005, N'Nicat', N'Mardanov', 1, NULL, NULL, N'nicat@aztu.edu.az', N'nicat123', NULL, NULL, NULL, 1)
-INSERT [dbo].[Arasdirmacilar] ([ID], [Arasdirmaci_Ad], [Arasdirmaci_Soyad], [Kafedra_ID], [Tehsil_seviyyesi_ID], [Mesleki_Idari_Deneyim_iD], [Arasdirmaci_emeil], [Arasdirmaci_password], [Arasdirmaci_pedoqoji_ad_ID], [cv_adres], [profil_shekil], [rol_id]) VALUES (1006, N'string', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
-INSERT [dbo].[Arasdirmacilar] ([ID], [Arasdirmaci_Ad], [Arasdirmaci_Soyad], [Kafedra_ID], [Tehsil_seviyyesi_ID], [Mesleki_Idari_Deneyim_iD], [Arasdirmaci_emeil], [Arasdirmaci_password], [Arasdirmaci_pedoqoji_ad_ID], [cv_adres], [profil_shekil], [rol_id]) VALUES (1007, N'string11', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
-SET IDENTITY_INSERT [dbo].[Arasdirmacilar] OFF
-SET IDENTITY_INSERT [dbo].[Bakalavriat_siyahi] ON 
+GO
+/****** Object:  Table [dbo].[Rel_ResearcherDegree]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Rel_ResearcherDegree](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[researcher_id] [int] NULL,
+	[degree_id] [int] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_Rel_ResearcherDegree] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-INSERT [dbo].[Bakalavriat_siyahi] ([ID], [Bakalavr_Universitet], [Bakalavr_baslangic_il], [Bakalavr_bitis_il], [Bakalavr_disertasiya_ad], [Bakalavr_disertasiya_PDF_ID]) VALUES (1, 2, CAST(0x02390B00 AS Date), CAST(0x6B3E0B00 AS Date), N'Deykstra alqoritmi', NULL)
-SET IDENTITY_INSERT [dbo].[Bakalavriat_siyahi] OFF
-SET IDENTITY_INSERT [dbo].[Dil_Seviyye] ON 
+GO
+/****** Object:  Table [dbo].[Rel_TextbookResearcher]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Rel_TextbookResearcher](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[textbook_id] [int] NULL,
+	[int_author_id] [int] NULL,
+	[ext_author_id] [int] NULL,
+	[type] [tinyint] NULL,
+ CONSTRAINT [PK_Rel_TextbookResearcher] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-INSERT [dbo].[Dil_Seviyye] ([id], [seviyye_ad]) VALUES (1, N'Başlanğıc')
-INSERT [dbo].[Dil_Seviyye] ([id], [seviyye_ad]) VALUES (2, N'Elementar')
-INSERT [dbo].[Dil_Seviyye] ([id], [seviyye_ad]) VALUES (3, N'Orta')
-INSERT [dbo].[Dil_Seviyye] ([id], [seviyye_ad]) VALUES (4, N'Yaxşı')
-INSERT [dbo].[Dil_Seviyye] ([id], [seviyye_ad]) VALUES (5, N'Sərbəst')
-SET IDENTITY_INSERT [dbo].[Dil_Seviyye] OFF
-SET IDENTITY_INSERT [dbo].[Elanlar] ON 
+GO
+/****** Object:  Table [dbo].[Rel_ThesisResearcher]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Rel_ThesisResearcher](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[thesis_id] [int] NULL,
+	[int_author_id] [int] NULL,
+	[ext_author_id] [int] NULL,
+	[type] [tinyint] NULL,
+ CONSTRAINT [PK_Rel_ThesisResearcher] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-INSERT [dbo].[Elanlar] ([id], [ad], [aciqlama], [arasdirmaci_id]) VALUES (1, N'Test elan adi', N'Test elan aciqlama', 1005)
-INSERT [dbo].[Elanlar] ([id], [ad], [aciqlama], [arasdirmaci_id]) VALUES (2, N'Test elan adi 1', N'Test elan aciqlama 1', 1005)
-SET IDENTITY_INSERT [dbo].[Elanlar] OFF
-SET IDENTITY_INSERT [dbo].[Elmler_doktorlugu_siyahi] ON 
+GO
+/****** Object:  Table [dbo].[ResearchArea]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ResearchArea](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](1000) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_ResearchArea] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-INSERT [dbo].[Elmler_doktorlugu_siyahi] ([ID], [elmler_doktoru_universitet_ID], [elmler_doktoru_baslangic_il], [elmler_doktoru_bitis_il], [elmler_doktoru_disertasiya_ad], [elmler_doktoru__disertasiya_PDF_ID]) VALUES (1, 1, CAST(0x6C440B00 AS Date), CAST(0xB4480B00 AS Date), N'test', NULL)
-SET IDENTITY_INSERT [dbo].[Elmler_doktorlugu_siyahi] OFF
-SET IDENTITY_INSERT [dbo].[elmler_namizedlik_siyahi] ON 
+GO
+/****** Object:  Table [dbo].[ResearcherEducation]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ResearcherEducation](
+	[id] [int] NOT NULL,
+	[start_date] [datetime] NULL,
+	[end_date] [datetime] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[researcher_id] [int] NULL,
+	[form_id] [smallint] NULL,
+	[level_id] [smallint] NULL,
+	[organization_id] [int] NULL,
+	[country_id] [smallint] NULL,
+	[language_id] [smallint] NULL,
+	[profession_id] [int] NULL,
+	[status_id] [tinyint] NULL,
+ CONSTRAINT [PK_ResearcherEducation] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-INSERT [dbo].[elmler_namizedlik_siyahi] ([ID], [elmler_namizedi_universitet_ID], [elmler_namizedi_baslangic_il], [elmler_namizedi_bitis_il], [elmler_namizedi_disertasiya_ad], [elmler_namizedi_disertasiya_PDF_ID]) VALUES (3, 1, CAST(0xB73E0B00 AS Date), CAST(0x6C440B00 AS Date), N'Test', NULL)
-SET IDENTITY_INSERT [dbo].[elmler_namizedlik_siyahi] OFF
-SET IDENTITY_INSERT [dbo].[Fakulteler] ON 
+GO
+/****** Object:  Table [dbo].[ResearcherLanguage]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ResearcherLanguage](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[researcher_id] [int] NULL,
+	[language_id] [smallint] NULL,
+	[level_id] [smallint] NULL,
+	[file_id] [bigint] NULL,
+ CONSTRAINT [PK_ResearcherLanguage] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-INSERT [dbo].[Fakulteler] ([ID], [Fakulte_Ad], [Kafedra_ID]) VALUES (1, N'AKT', NULL)
-SET IDENTITY_INSERT [dbo].[Fakulteler] OFF
-SET IDENTITY_INSERT [dbo].[Is_tecrubesi] ON 
+GO
+/****** Object:  Table [dbo].[ResearcherPosition]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ResearcherPosition](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[start_date] [datetime] NULL,
+	[end_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[researcher_id] [int] NULL,
+	[organization_id] [int] NULL,
+	[position_id] [int] NULL,
+	[department_id] [int] NULL,
+ CONSTRAINT [PK_ResearcherPosition] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
-INSERT [dbo].[Is_tecrubesi] ([ID], [Is_vezife], [Is_yeri], [Is_baslangic_tarixi], [Is_bitis_tarixi], [arasdirmaci_id]) VALUES (1, N'Proqramçı', N'ADY QSC', CAST(0x53400B00 AS Date), CAST(0xAF400B00 AS Date), 1005)
-SET IDENTITY_INSERT [dbo].[Is_tecrubesi] OFF
-SET IDENTITY_INSERT [dbo].[Jurnallar] ON 
+GO
+/****** Object:  Table [dbo].[Textbook]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Textbook](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](max) NULL,
+	[description] [nvarchar](max) NULL,
+	[date] [datetime] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[publisher_id] [int] NULL,
+	[creator_id] [int] NULL,
+ CONSTRAINT [PK_Textbook] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
-INSERT [dbo].[Jurnallar] ([ID], [Jurnal_ad]) VALUES (1, N'Jurnal1')
-INSERT [dbo].[Jurnallar] ([ID], [Jurnal_ad]) VALUES (2, N'Jurnal2')
-SET IDENTITY_INSERT [dbo].[Jurnallar] OFF
-SET IDENTITY_INSERT [dbo].[kafedralar] ON 
+GO
+/****** Object:  Table [dbo].[Thesis]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Thesis](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [nvarchar](max) NULL,
+	[description] [nvarchar](max) NULL,
+	[date] [datetime] NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[publisher_id] [int] NULL,
+	[creator_id] [int] NULL,
+ CONSTRAINT [PK_Thesis] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
-INSERT [dbo].[kafedralar] ([Id], [Kafedra_Ad]) VALUES (1, N'Kompüter sistemləri və şəbəkələri')
-SET IDENTITY_INSERT [dbo].[kafedralar] OFF
-SET IDENTITY_INSERT [dbo].[Meqale_Nov] ON 
+GO
+/****** Object:  Table [dbo].[User]    Script Date: 12/5/2020 3:18:27 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[User](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[first_name] [nvarchar](100) NULL,
+	[last_name] [nvarchar](100) NULL,
+	[patronymic] [nvarchar](100) NULL,
+	[image_address] [varchar](max) NULL,
+	[email] [nvarchar](100) NULL,
+	[password] [nvarchar](100) NULL,
+	[create_date] [datetime] NULL,
+	[update_date] [datetime] NULL,
+	[delete_date] [datetime] NULL,
+	[status_id] [tinyint] NULL,
+	[nationality_id] [smallint] NULL,
+	[citizenship_id] [smallint] NULL,
+	[role_id] [tinyint] NULL,
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
-INSERT [dbo].[Meqale_Nov] ([id], [Meqale_Nov_Ad]) VALUES (1, N'Məqalə')
-INSERT [dbo].[Meqale_Nov] ([id], [Meqale_Nov_Ad]) VALUES (2, N'Monoqraf')
-INSERT [dbo].[Meqale_Nov] ([id], [Meqale_Nov_Ad]) VALUES (3, N'Dərslik')
-INSERT [dbo].[Meqale_Nov] ([id], [Meqale_Nov_Ad]) VALUES (4, N'Tezis')
-SET IDENTITY_INSERT [dbo].[Meqale_Nov] OFF
-SET IDENTITY_INSERT [dbo].[Meqaleler] ON 
-
-INSERT [dbo].[Meqaleler] ([Id], [Meqale_Ad], [Meqale_Haqqinda], [Meqale_il], [Meqale_nov_Id], [Olke], [Universitet_Id], [Sahe_Id], [Meqale_jurnal_ID], [Indeks_Meqale]) VALUES (1, N'Meqale Test', NULL, NULL, NULL, N'Aze', 1, NULL, 1, NULL)
-INSERT [dbo].[Meqaleler] ([Id], [Meqale_Ad], [Meqale_Haqqinda], [Meqale_il], [Meqale_nov_Id], [Olke], [Universitet_Id], [Sahe_Id], [Meqale_jurnal_ID], [Indeks_Meqale]) VALUES (2, N'aaaa', NULL, NULL, NULL, N'Azərbaycan', 2, NULL, NULL, NULL)
-SET IDENTITY_INSERT [dbo].[Meqaleler] OFF
-SET IDENTITY_INSERT [dbo].[Patentler] ON 
-
-INSERT [dbo].[Patentler] ([ID], [Patent_Ad], [Arasdirmaci_ID]) VALUES (1, N'Patent ad', 1005)
-SET IDENTITY_INSERT [dbo].[Patentler] OFF
-SET IDENTITY_INSERT [dbo].[Rol] ON 
-
-INSERT [dbo].[Rol] ([id], [rol_ad]) VALUES (1, N'Admin')
-INSERT [dbo].[Rol] ([id], [rol_ad]) VALUES (2, N'İstifadəçi')
-SET IDENTITY_INSERT [dbo].[Rol] OFF
-SET IDENTITY_INSERT [dbo].[Sertifikatlar] ON 
-
-INSERT [dbo].[Sertifikatlar] ([id], [Sertifikat_ad], [Arasdirmaci_ID], [Aciqlama], [sertifikat_link], [pdf_adres]) VALUES (1, N'MTA', 1005, N'sertifikat aciqlama', N'http://microsoft.com', NULL)
-SET IDENTITY_INSERT [dbo].[Sertifikatlar] OFF
-SET IDENTITY_INSERT [dbo].[Tehsil_seviyye] ON 
-
-INSERT [dbo].[Tehsil_seviyye] ([ID], [Bakalavr_ID], [Magistr_ID], [elmler_namizedi_ID], [elmler_doktoru], [arasdirmaci_id]) VALUES (4, 1, NULL, 3, 1, 1005)
-SET IDENTITY_INSERT [dbo].[Tehsil_seviyye] OFF
-SET IDENTITY_INSERT [dbo].[Universitetler] ON 
-
-INSERT [dbo].[Universitetler] ([ID], [Universitet_Ad]) VALUES (1, N'Azərbaycan Texniki Universiteti')
-INSERT [dbo].[Universitetler] ([ID], [Universitet_Ad]) VALUES (2, N'Azərbaycan Dövlət Neft və Sənaye Universiteti')
-SET IDENTITY_INSERT [dbo].[Universitetler] OFF
-SET IDENTITY_INSERT [dbo].[Xarici_Dil] ON 
-
-INSERT [dbo].[Xarici_Dil] ([id], [ad]) VALUES (1, N'İngilis dili')
-SET IDENTITY_INSERT [dbo].[Xarici_Dil] OFF
-ALTER TABLE [dbo].[A_Saheleri_Adlari]  WITH CHECK ADD  CONSTRAINT [FK_A_Saheleri_Adlari_kafedralar] FOREIGN KEY([Kafedra_Id])
-REFERENCES [dbo].[kafedralar] ([Id])
-ON DELETE SET NULL
-GO
-ALTER TABLE [dbo].[A_Saheleri_Adlari] CHECK CONSTRAINT [FK_A_Saheleri_Adlari_kafedralar]
-GO
-ALTER TABLE [dbo].[Arasdirma_Saheleri]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirma_Saheleri_A_Saheleri_Adlari] FOREIGN KEY([Sahe_Id])
-REFERENCES [dbo].[A_Saheleri_Adlari] ([ID])
-ON DELETE SET NULL
-GO
-ALTER TABLE [dbo].[Arasdirma_Saheleri] CHECK CONSTRAINT [FK_Arasdirma_Saheleri_A_Saheleri_Adlari]
-GO
-ALTER TABLE [dbo].[Arasdirma_Saheleri]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirma_Saheleri_Arasdirmacilar] FOREIGN KEY([Arasdirmaci_Id])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
 GO
-ALTER TABLE [dbo].[Arasdirma_Saheleri] CHECK CONSTRAINT [FK_Arasdirma_Saheleri_Arasdirmacilar]
-GO
-ALTER TABLE [dbo].[Arasdirmaci_administrativ_vezife]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmaci_administrativ_vezife_Administrativ_vezifeler] FOREIGN KEY([Administrativ_vezife_ID])
-REFERENCES [dbo].[Administrativ_vezifeler] ([ID])
-ON DELETE SET NULL
+SET ANSI_PADDING OFF
 GO
-ALTER TABLE [dbo].[Arasdirmaci_administrativ_vezife] CHECK CONSTRAINT [FK_Arasdirmaci_administrativ_vezife_Administrativ_vezifeler]
+ALTER TABLE [dbo].[Announcement]  WITH CHECK ADD  CONSTRAINT [FK_Announcement_User] FOREIGN KEY([researcher_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmaci_administrativ_vezife]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmaci_administrativ_vezife_Arasdirmacilar] FOREIGN KEY([Arasdirmaci_ID])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Announcement] CHECK CONSTRAINT [FK_Announcement_User]
 GO
-ALTER TABLE [dbo].[Arasdirmaci_administrativ_vezife] CHECK CONSTRAINT [FK_Arasdirmaci_administrativ_vezife_Arasdirmacilar]
+ALTER TABLE [dbo].[Article]  WITH CHECK ADD  CONSTRAINT [FK_Article_File] FOREIGN KEY([file_id])
+REFERENCES [dbo].[File] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmaci_Dil]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmaci_Dil_Arasdirmacilar] FOREIGN KEY([arasdirmaci_id])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Article] CHECK CONSTRAINT [FK_Article_File]
 GO
-ALTER TABLE [dbo].[Arasdirmaci_Dil] CHECK CONSTRAINT [FK_Arasdirmaci_Dil_Arasdirmacilar]
+ALTER TABLE [dbo].[Article]  WITH CHECK ADD  CONSTRAINT [FK_Article_Journal] FOREIGN KEY([journal_id])
+REFERENCES [dbo].[Journal] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmaci_Dil]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmaci_Dil_Dil_Seviyye] FOREIGN KEY([dil_seviyye])
-REFERENCES [dbo].[Dil_Seviyye] ([id])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Article] CHECK CONSTRAINT [FK_Article_Journal]
 GO
-ALTER TABLE [dbo].[Arasdirmaci_Dil] CHECK CONSTRAINT [FK_Arasdirmaci_Dil_Dil_Seviyye]
+ALTER TABLE [dbo].[Article]  WITH CHECK ADD  CONSTRAINT [FK_Article_User] FOREIGN KEY([creator_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmaci_Dil]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmaci_Dil_Xarici_Dil] FOREIGN KEY([xarici_dil_id])
-REFERENCES [dbo].[Xarici_Dil] ([id])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Article] CHECK CONSTRAINT [FK_Article_User]
 GO
-ALTER TABLE [dbo].[Arasdirmaci_Dil] CHECK CONSTRAINT [FK_Arasdirmaci_Dil_Xarici_Dil]
+ALTER TABLE [dbo].[Certificate]  WITH CHECK ADD  CONSTRAINT [FK_Certificate_File] FOREIGN KEY([file_id])
+REFERENCES [dbo].[File] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmaci_Meqale]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmaci_Meqale_Arasdirmacilar] FOREIGN KEY([Arasdirmaci_ID])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Certificate] CHECK CONSTRAINT [FK_Certificate_File]
 GO
-ALTER TABLE [dbo].[Arasdirmaci_Meqale] CHECK CONSTRAINT [FK_Arasdirmaci_Meqale_Arasdirmacilar]
+ALTER TABLE [dbo].[Certificate]  WITH CHECK ADD  CONSTRAINT [FK_Certificate_User] FOREIGN KEY([researcher_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmaci_Meqale]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmaci_Meqale_Meqaleler] FOREIGN KEY([Meqale_ID])
-REFERENCES [dbo].[Meqaleler] ([Id])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Certificate] CHECK CONSTRAINT [FK_Certificate_User]
 GO
-ALTER TABLE [dbo].[Arasdirmaci_Meqale] CHECK CONSTRAINT [FK_Arasdirmaci_Meqale_Meqaleler]
+ALTER TABLE [dbo].[Contact]  WITH CHECK ADD  CONSTRAINT [FK_Contact_ContactType] FOREIGN KEY([type_id])
+REFERENCES [dbo].[ContactType] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmacilar]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmacilar_Arasdirmaci_Pedoqoji_Ad] FOREIGN KEY([Arasdirmaci_pedoqoji_ad_ID])
-REFERENCES [dbo].[Arasdirmaci_pedoqoji_ad] ([Arasdirmaci_pedoqoji_Ad_ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Contact] CHECK CONSTRAINT [FK_Contact_ContactType]
 GO
-ALTER TABLE [dbo].[Arasdirmacilar] CHECK CONSTRAINT [FK_Arasdirmacilar_Arasdirmaci_Pedoqoji_Ad]
+ALTER TABLE [dbo].[Contact]  WITH CHECK ADD  CONSTRAINT [FK_Contact_User] FOREIGN KEY([researcher_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmacilar]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmacilar_kafedralar] FOREIGN KEY([Kafedra_ID])
-REFERENCES [dbo].[kafedralar] ([Id])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Contact] CHECK CONSTRAINT [FK_Contact_User]
 GO
-ALTER TABLE [dbo].[Arasdirmacilar] CHECK CONSTRAINT [FK_Arasdirmacilar_kafedralar]
+ALTER TABLE [dbo].[Department]  WITH CHECK ADD  CONSTRAINT [FK_Department_Faculty] FOREIGN KEY([faculty_id])
+REFERENCES [dbo].[Faculty] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmacilar]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmacilar_Mesleki_Idari_Deneyim] FOREIGN KEY([Mesleki_Idari_Deneyim_iD])
-REFERENCES [dbo].[Mesleki_Idari_Deneyim] ([Id])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Department] CHECK CONSTRAINT [FK_Department_Faculty]
 GO
-ALTER TABLE [dbo].[Arasdirmacilar] CHECK CONSTRAINT [FK_Arasdirmacilar_Mesleki_Idari_Deneyim]
+ALTER TABLE [dbo].[Dissertation]  WITH CHECK ADD  CONSTRAINT [FK_Dissertation_File] FOREIGN KEY([file_id])
+REFERENCES [dbo].[File] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmacilar]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmacilar_Rol] FOREIGN KEY([rol_id])
-REFERENCES [dbo].[Rol] ([id])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Dissertation] CHECK CONSTRAINT [FK_Dissertation_File]
 GO
-ALTER TABLE [dbo].[Arasdirmacilar] CHECK CONSTRAINT [FK_Arasdirmacilar_Rol]
+ALTER TABLE [dbo].[Dissertation]  WITH CHECK ADD  CONSTRAINT [FK_Dissertation_ResearcherEducation] FOREIGN KEY([education_id])
+REFERENCES [dbo].[ResearcherEducation] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmacilar_Elmi_jurnaldaki_vezifeleri]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmacilar_Elmi_jurnaldaki_vezifeleri_Arasdirmacilar] FOREIGN KEY([arasdirmaci_ID])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Dissertation] CHECK CONSTRAINT [FK_Dissertation_ResearcherEducation]
 GO
-ALTER TABLE [dbo].[Arasdirmacilar_Elmi_jurnaldaki_vezifeleri] CHECK CONSTRAINT [FK_Arasdirmacilar_Elmi_jurnaldaki_vezifeleri_Arasdirmacilar]
+ALTER TABLE [dbo].[EducationOrganization]  WITH CHECK ADD  CONSTRAINT [FK_EducationOrganization_EducationOrganizationType] FOREIGN KEY([type_id])
+REFERENCES [dbo].[EducationOrganizationType] ([id])
 GO
-ALTER TABLE [dbo].[Arasdirmacilar_Elmi_jurnaldaki_vezifeleri]  WITH CHECK ADD  CONSTRAINT [FK_Arasdirmacilar_Elmi_jurnaldaki_vezifeleri_Elmi_jurnaldaki_vezifeler] FOREIGN KEY([elmi_jurnaldaki_vezife_ID])
-REFERENCES [dbo].[Elmi_jurnaldaki_vezifeler] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[EducationOrganization] CHECK CONSTRAINT [FK_EducationOrganization_EducationOrganizationType]
 GO
-ALTER TABLE [dbo].[Arasdirmacilar_Elmi_jurnaldaki_vezifeleri] CHECK CONSTRAINT [FK_Arasdirmacilar_Elmi_jurnaldaki_vezifeleri_Elmi_jurnaldaki_vezifeler]
+ALTER TABLE [dbo].[ExternalResearcher]  WITH CHECK ADD  CONSTRAINT [FK_ExternalResearcher_EducationOrganization] FOREIGN KEY([organization_id])
+REFERENCES [dbo].[EducationOrganization] ([id])
 GO
-ALTER TABLE [dbo].[Ders_arasdirmaci]  WITH CHECK ADD  CONSTRAINT [FK_Ders_arasdirmaci_Arasdirmacilar] FOREIGN KEY([Arasdirmaci_ID])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[ExternalResearcher] CHECK CONSTRAINT [FK_ExternalResearcher_EducationOrganization]
 GO
-ALTER TABLE [dbo].[Ders_arasdirmaci] CHECK CONSTRAINT [FK_Ders_arasdirmaci_Arasdirmacilar]
+ALTER TABLE [dbo].[File]  WITH CHECK ADD  CONSTRAINT [FK_File_User] FOREIGN KEY([user_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Ders_arasdirmaci]  WITH CHECK ADD  CONSTRAINT [FK_Ders_arasdirmaci_Dersler] FOREIGN KEY([ders_ID])
-REFERENCES [dbo].[Dersler] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[File] CHECK CONSTRAINT [FK_File_User]
 GO
-ALTER TABLE [dbo].[Ders_arasdirmaci] CHECK CONSTRAINT [FK_Ders_arasdirmaci_Dersler]
+ALTER TABLE [dbo].[Log]  WITH CHECK ADD  CONSTRAINT [FK_Log_Operation] FOREIGN KEY([operation_id])
+REFERENCES [dbo].[Operation] ([id])
 GO
-ALTER TABLE [dbo].[Dersler]  WITH CHECK ADD  CONSTRAINT [FK_Dersler_kafedralar] FOREIGN KEY([Kafedra_ID])
-REFERENCES [dbo].[kafedralar] ([Id])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Log] CHECK CONSTRAINT [FK_Log_Operation]
 GO
-ALTER TABLE [dbo].[Dersler] CHECK CONSTRAINT [FK_Dersler_kafedralar]
+ALTER TABLE [dbo].[Log]  WITH CHECK ADD  CONSTRAINT [FK_Log_User] FOREIGN KEY([user_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Elanlar]  WITH CHECK ADD  CONSTRAINT [FK_Elanlar_Arasdirmacilar] FOREIGN KEY([arasdirmaci_id])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Log] CHECK CONSTRAINT [FK_Log_User]
 GO
-ALTER TABLE [dbo].[Elanlar] CHECK CONSTRAINT [FK_Elanlar_Arasdirmacilar]
+ALTER TABLE [dbo].[ManagementExperience]  WITH CHECK ADD  CONSTRAINT [FK_ManagementExperience_EducationOrganization] FOREIGN KEY([organization_id])
+REFERENCES [dbo].[EducationOrganization] ([id])
 GO
-ALTER TABLE [dbo].[Elaqe]  WITH CHECK ADD  CONSTRAINT [FK_Elaqe_Arasdirmacilar] FOREIGN KEY([arasdirmaci_id])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[ManagementExperience] CHECK CONSTRAINT [FK_ManagementExperience_EducationOrganization]
 GO
-ALTER TABLE [dbo].[Elaqe] CHECK CONSTRAINT [FK_Elaqe_Arasdirmacilar]
+ALTER TABLE [dbo].[ManagementExperience]  WITH CHECK ADD  CONSTRAINT [FK_ManagementExperience_User] FOREIGN KEY([researcher_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Fakulteler]  WITH CHECK ADD  CONSTRAINT [FK_Fakulteler_kafedralar] FOREIGN KEY([Kafedra_ID])
-REFERENCES [dbo].[kafedralar] ([Id])
+ALTER TABLE [dbo].[ManagementExperience] CHECK CONSTRAINT [FK_ManagementExperience_User]
 GO
-ALTER TABLE [dbo].[Fakulteler] CHECK CONSTRAINT [FK_Fakulteler_kafedralar]
+ALTER TABLE [dbo].[PasswordReset]  WITH CHECK ADD  CONSTRAINT [FK_PasswordReset_User] FOREIGN KEY([user_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Is_tecrubesi]  WITH CHECK ADD  CONSTRAINT [FK_Is_tecrubesi_Arasdirmacilar] FOREIGN KEY([arasdirmaci_id])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[PasswordReset] CHECK CONSTRAINT [FK_PasswordReset_User]
 GO
-ALTER TABLE [dbo].[Is_tecrubesi] CHECK CONSTRAINT [FK_Is_tecrubesi_Arasdirmacilar]
+ALTER TABLE [dbo].[Patent]  WITH CHECK ADD  CONSTRAINT [FK_Patent_EducationOrganization] FOREIGN KEY([organization_id])
+REFERENCES [dbo].[EducationOrganization] ([id])
 GO
-ALTER TABLE [dbo].[Meqaleler]  WITH CHECK ADD  CONSTRAINT [FK_Meqale_Jurnallar] FOREIGN KEY([Meqale_jurnal_ID])
-REFERENCES [dbo].[Jurnallar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Patent] CHECK CONSTRAINT [FK_Patent_EducationOrganization]
 GO
-ALTER TABLE [dbo].[Meqaleler] CHECK CONSTRAINT [FK_Meqale_Jurnallar]
+ALTER TABLE [dbo].[Patent]  WITH CHECK ADD  CONSTRAINT [FK_Patent_User] FOREIGN KEY([researcher_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Meqaleler]  WITH CHECK ADD  CONSTRAINT [FK_Meqale_Universitetler] FOREIGN KEY([Universitet_Id])
-REFERENCES [dbo].[Universitetler] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Patent] CHECK CONSTRAINT [FK_Patent_User]
 GO
-ALTER TABLE [dbo].[Meqaleler] CHECK CONSTRAINT [FK_Meqale_Universitetler]
+ALTER TABLE [dbo].[Profession]  WITH CHECK ADD  CONSTRAINT [FK_Profession_Department] FOREIGN KEY([department_id])
+REFERENCES [dbo].[Department] ([id])
 GO
-ALTER TABLE [dbo].[Meqaleler]  WITH CHECK ADD  CONSTRAINT [FK_Meqaleler_Meqale_Nov] FOREIGN KEY([Meqale_nov_Id])
-REFERENCES [dbo].[Meqale_Nov] ([id])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Profession] CHECK CONSTRAINT [FK_Profession_Department]
 GO
-ALTER TABLE [dbo].[Meqaleler] CHECK CONSTRAINT [FK_Meqaleler_Meqale_Nov]
+ALTER TABLE [dbo].[Project]  WITH CHECK ADD  CONSTRAINT [FK_Project_EducationOrganization] FOREIGN KEY([organization_id])
+REFERENCES [dbo].[EducationOrganization] ([id])
 GO
-ALTER TABLE [dbo].[Mukafatlar]  WITH CHECK ADD  CONSTRAINT [FK_Mukafatlar_Arasdirmacilar] FOREIGN KEY([Arasdirmaci_ID])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Project] CHECK CONSTRAINT [FK_Project_EducationOrganization]
 GO
-ALTER TABLE [dbo].[Mukafatlar] CHECK CONSTRAINT [FK_Mukafatlar_Arasdirmacilar]
+ALTER TABLE [dbo].[Project]  WITH CHECK ADD  CONSTRAINT [FK_Project_User] FOREIGN KEY([researcher_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Patentler]  WITH CHECK ADD  CONSTRAINT [FK_Patentler_Arasdirmacilar] FOREIGN KEY([Arasdirmaci_ID])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Project] CHECK CONSTRAINT [FK_Project_User]
 GO
-ALTER TABLE [dbo].[Patentler] CHECK CONSTRAINT [FK_Patentler_Arasdirmacilar]
+ALTER TABLE [dbo].[Rel_ArticleResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_ArticleResearcher_Article] FOREIGN KEY([article_id])
+REFERENCES [dbo].[Article] ([id])
 GO
-ALTER TABLE [dbo].[Pdfler]  WITH CHECK ADD  CONSTRAINT [FK_Pdfler_Meqale] FOREIGN KEY([Meqale_ID])
-REFERENCES [dbo].[Meqaleler] ([Id])
+ALTER TABLE [dbo].[Rel_ArticleResearcher] CHECK CONSTRAINT [FK_Rel_ArticleResearcher_Article]
 GO
-ALTER TABLE [dbo].[Pdfler] CHECK CONSTRAINT [FK_Pdfler_Meqale]
+ALTER TABLE [dbo].[Rel_ArticleResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_ArticleResearcher_ExternalResearcher] FOREIGN KEY([ext_author_id])
+REFERENCES [dbo].[ExternalResearcher] ([id])
 GO
-ALTER TABLE [dbo].[Sertifikatlar]  WITH CHECK ADD  CONSTRAINT [FK_Sertifikatlar_Arasdirmacilar] FOREIGN KEY([Arasdirmaci_ID])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Rel_ArticleResearcher] CHECK CONSTRAINT [FK_Rel_ArticleResearcher_ExternalResearcher]
 GO
-ALTER TABLE [dbo].[Sertifikatlar] CHECK CONSTRAINT [FK_Sertifikatlar_Arasdirmacilar]
+ALTER TABLE [dbo].[Rel_ArticleResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_ArticleResearcher_User] FOREIGN KEY([int_author_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Tehsil_seviyye]  WITH CHECK ADD  CONSTRAINT [FK_Tehsil_seviyye_Arasdirmacilar] FOREIGN KEY([arasdirmaci_id])
-REFERENCES [dbo].[Arasdirmacilar] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Rel_ArticleResearcher] CHECK CONSTRAINT [FK_Rel_ArticleResearcher_User]
 GO
-ALTER TABLE [dbo].[Tehsil_seviyye] CHECK CONSTRAINT [FK_Tehsil_seviyye_Arasdirmacilar]
+ALTER TABLE [dbo].[Rel_PatentResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_PatentResearcher_ExternalResearcher] FOREIGN KEY([ext_author_id])
+REFERENCES [dbo].[ExternalResearcher] ([id])
 GO
-ALTER TABLE [dbo].[Tehsil_seviyye]  WITH CHECK ADD  CONSTRAINT [FK_Tehsil_seviyye_Bakalavriat_siyahi] FOREIGN KEY([Bakalavr_ID])
-REFERENCES [dbo].[Bakalavriat_siyahi] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Rel_PatentResearcher] CHECK CONSTRAINT [FK_Rel_PatentResearcher_ExternalResearcher]
 GO
-ALTER TABLE [dbo].[Tehsil_seviyye] CHECK CONSTRAINT [FK_Tehsil_seviyye_Bakalavriat_siyahi]
+ALTER TABLE [dbo].[Rel_PatentResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_PatentResearcher_User] FOREIGN KEY([int_author_id])
+REFERENCES [dbo].[User] ([id])
 GO
-ALTER TABLE [dbo].[Tehsil_seviyye]  WITH CHECK ADD  CONSTRAINT [FK_Tehsil_seviyye_Elmler_doktorlugu_siyahi] FOREIGN KEY([elmler_doktoru])
-REFERENCES [dbo].[Elmler_doktorlugu_siyahi] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Rel_PatentResearcher] CHECK CONSTRAINT [FK_Rel_PatentResearcher_User]
 GO
-ALTER TABLE [dbo].[Tehsil_seviyye] CHECK CONSTRAINT [FK_Tehsil_seviyye_Elmler_doktorlugu_siyahi]
+ALTER TABLE [dbo].[Rel_ProjectResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_ProjectResearcher_ExternalResearcher] FOREIGN KEY([ext_author_id])
+REFERENCES [dbo].[ExternalResearcher] ([id])
 GO
-ALTER TABLE [dbo].[Tehsil_seviyye]  WITH CHECK ADD  CONSTRAINT [FK_Tehsil_seviyye_elmler_namizedlik_siyahi1] FOREIGN KEY([elmler_namizedi_ID])
-REFERENCES [dbo].[elmler_namizedlik_siyahi] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Rel_ProjectResearcher] CHECK CONSTRAINT [FK_Rel_ProjectResearcher_ExternalResearcher]
 GO
-ALTER TABLE [dbo].[Tehsil_seviyye] CHECK CONSTRAINT [FK_Tehsil_seviyye_elmler_namizedlik_siyahi1]
+ALTER TABLE [dbo].[Rel_ProjectResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_ProjectResearcher_Project] FOREIGN KEY([project_id])
+REFERENCES [dbo].[Project] ([id])
 GO
-ALTER TABLE [dbo].[Tehsil_seviyye]  WITH CHECK ADD  CONSTRAINT [FK_Tehsil_seviyye_Magistrantura_siyahisi] FOREIGN KEY([Magistr_ID])
-REFERENCES [dbo].[Magistrantura_siyahisi] ([ID])
-ON DELETE SET NULL
+ALTER TABLE [dbo].[Rel_ProjectResearcher] CHECK CONSTRAINT [FK_Rel_ProjectResearcher_Project]
 GO
-ALTER TABLE [dbo].[Tehsil_seviyye] CHECK CONSTRAINT [FK_Tehsil_seviyye_Magistrantura_siyahisi]
+ALTER TABLE [dbo].[Rel_ProjectResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_ProjectResearcher_User] FOREIGN KEY([int_author_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Rel_ProjectResearcher] CHECK CONSTRAINT [FK_Rel_ProjectResearcher_User]
+GO
+ALTER TABLE [dbo].[Rel_Researcher_ResearcherArea]  WITH CHECK ADD  CONSTRAINT [FK_Rel_Researcher_ResearcherArea_ResearchArea] FOREIGN KEY([area_id])
+REFERENCES [dbo].[ResearchArea] ([id])
+GO
+ALTER TABLE [dbo].[Rel_Researcher_ResearcherArea] CHECK CONSTRAINT [FK_Rel_Researcher_ResearcherArea_ResearchArea]
+GO
+ALTER TABLE [dbo].[Rel_Researcher_ResearcherArea]  WITH CHECK ADD  CONSTRAINT [FK_Rel_Researcher_ResearcherArea_User] FOREIGN KEY([researcher_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Rel_Researcher_ResearcherArea] CHECK CONSTRAINT [FK_Rel_Researcher_ResearcherArea_User]
+GO
+ALTER TABLE [dbo].[Rel_ResearcherDegree]  WITH CHECK ADD  CONSTRAINT [FK_Rel_ResearcherDegree_EducationDegree] FOREIGN KEY([degree_id])
+REFERENCES [dbo].[EducationDegree] ([id])
+GO
+ALTER TABLE [dbo].[Rel_ResearcherDegree] CHECK CONSTRAINT [FK_Rel_ResearcherDegree_EducationDegree]
+GO
+ALTER TABLE [dbo].[Rel_ResearcherDegree]  WITH CHECK ADD  CONSTRAINT [FK_Rel_ResearcherDegree_User] FOREIGN KEY([researcher_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Rel_ResearcherDegree] CHECK CONSTRAINT [FK_Rel_ResearcherDegree_User]
+GO
+ALTER TABLE [dbo].[Rel_TextbookResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_TextbookResearcher_ExternalResearcher] FOREIGN KEY([ext_author_id])
+REFERENCES [dbo].[ExternalResearcher] ([id])
+GO
+ALTER TABLE [dbo].[Rel_TextbookResearcher] CHECK CONSTRAINT [FK_Rel_TextbookResearcher_ExternalResearcher]
+GO
+ALTER TABLE [dbo].[Rel_TextbookResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_TextbookResearcher_Textbook] FOREIGN KEY([textbook_id])
+REFERENCES [dbo].[Textbook] ([id])
+GO
+ALTER TABLE [dbo].[Rel_TextbookResearcher] CHECK CONSTRAINT [FK_Rel_TextbookResearcher_Textbook]
+GO
+ALTER TABLE [dbo].[Rel_TextbookResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_TextbookResearcher_User] FOREIGN KEY([int_author_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Rel_TextbookResearcher] CHECK CONSTRAINT [FK_Rel_TextbookResearcher_User]
+GO
+ALTER TABLE [dbo].[Rel_ThesisResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_ThesisResearcher_ExternalResearcher] FOREIGN KEY([ext_author_id])
+REFERENCES [dbo].[ExternalResearcher] ([id])
+GO
+ALTER TABLE [dbo].[Rel_ThesisResearcher] CHECK CONSTRAINT [FK_Rel_ThesisResearcher_ExternalResearcher]
+GO
+ALTER TABLE [dbo].[Rel_ThesisResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_ThesisResearcher_Thesis] FOREIGN KEY([thesis_id])
+REFERENCES [dbo].[Thesis] ([id])
+GO
+ALTER TABLE [dbo].[Rel_ThesisResearcher] CHECK CONSTRAINT [FK_Rel_ThesisResearcher_Thesis]
+GO
+ALTER TABLE [dbo].[Rel_ThesisResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_ThesisResearcher_User] FOREIGN KEY([int_author_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Rel_ThesisResearcher] CHECK CONSTRAINT [FK_Rel_ThesisResearcher_User]
+GO
+ALTER TABLE [dbo].[ResearcherEducation]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherEducation_EducationForm] FOREIGN KEY([form_id])
+REFERENCES [dbo].[EducationForm] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherEducation] CHECK CONSTRAINT [FK_ResearcherEducation_EducationForm]
+GO
+ALTER TABLE [dbo].[ResearcherEducation]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherEducation_EducationLevel] FOREIGN KEY([level_id])
+REFERENCES [dbo].[EducationLevel] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherEducation] CHECK CONSTRAINT [FK_ResearcherEducation_EducationLevel]
+GO
+ALTER TABLE [dbo].[ResearcherEducation]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherEducation_EducationOrganization] FOREIGN KEY([organization_id])
+REFERENCES [dbo].[EducationOrganization] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherEducation] CHECK CONSTRAINT [FK_ResearcherEducation_EducationOrganization]
+GO
+ALTER TABLE [dbo].[ResearcherEducation]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherEducation_Profession] FOREIGN KEY([profession_id])
+REFERENCES [dbo].[Profession] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherEducation] CHECK CONSTRAINT [FK_ResearcherEducation_Profession]
+GO
+ALTER TABLE [dbo].[ResearcherEducation]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherEducation_User] FOREIGN KEY([researcher_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherEducation] CHECK CONSTRAINT [FK_ResearcherEducation_User]
+GO
+ALTER TABLE [dbo].[ResearcherLanguage]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherLanguage_File] FOREIGN KEY([file_id])
+REFERENCES [dbo].[File] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherLanguage] CHECK CONSTRAINT [FK_ResearcherLanguage_File]
+GO
+ALTER TABLE [dbo].[ResearcherLanguage]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherLanguage_Language] FOREIGN KEY([language_id])
+REFERENCES [dbo].[Language] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherLanguage] CHECK CONSTRAINT [FK_ResearcherLanguage_Language]
+GO
+ALTER TABLE [dbo].[ResearcherLanguage]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherLanguage_LanguageLevels] FOREIGN KEY([level_id])
+REFERENCES [dbo].[LanguageLevels] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherLanguage] CHECK CONSTRAINT [FK_ResearcherLanguage_LanguageLevels]
+GO
+ALTER TABLE [dbo].[ResearcherLanguage]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherLanguage_User] FOREIGN KEY([researcher_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherLanguage] CHECK CONSTRAINT [FK_ResearcherLanguage_User]
+GO
+ALTER TABLE [dbo].[ResearcherPosition]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherPosition_Department] FOREIGN KEY([department_id])
+REFERENCES [dbo].[Department] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherPosition] CHECK CONSTRAINT [FK_ResearcherPosition_Department]
+GO
+ALTER TABLE [dbo].[ResearcherPosition]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherPosition_EducationOrganization] FOREIGN KEY([organization_id])
+REFERENCES [dbo].[EducationOrganization] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherPosition] CHECK CONSTRAINT [FK_ResearcherPosition_EducationOrganization]
+GO
+ALTER TABLE [dbo].[ResearcherPosition]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherPosition_Position] FOREIGN KEY([position_id])
+REFERENCES [dbo].[Position] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherPosition] CHECK CONSTRAINT [FK_ResearcherPosition_Position]
+GO
+ALTER TABLE [dbo].[ResearcherPosition]  WITH CHECK ADD  CONSTRAINT [FK_ResearcherPosition_User] FOREIGN KEY([researcher_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[ResearcherPosition] CHECK CONSTRAINT [FK_ResearcherPosition_User]
+GO
+ALTER TABLE [dbo].[Textbook]  WITH CHECK ADD  CONSTRAINT [FK_Textbook_User] FOREIGN KEY([publisher_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Textbook] CHECK CONSTRAINT [FK_Textbook_User]
+GO
+ALTER TABLE [dbo].[Textbook]  WITH CHECK ADD  CONSTRAINT [FK_Textbook_User1] FOREIGN KEY([creator_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Textbook] CHECK CONSTRAINT [FK_Textbook_User1]
+GO
+ALTER TABLE [dbo].[Thesis]  WITH CHECK ADD  CONSTRAINT [FK_Thesis_User] FOREIGN KEY([creator_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Thesis] CHECK CONSTRAINT [FK_Thesis_User]
+GO
+ALTER TABLE [dbo].[Thesis]  WITH CHECK ADD  CONSTRAINT [FK_Thesis_User1] FOREIGN KEY([publisher_id])
+REFERENCES [dbo].[User] ([id])
+GO
+ALTER TABLE [dbo].[Thesis] CHECK CONSTRAINT [FK_Thesis_User1]
 GO
 USE [master]
 GO
