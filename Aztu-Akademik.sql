@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Aztu-Akademik]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Database [Aztu-Akademik]    Script Date: 12/14/2020 3:17:36 AM ******/
 CREATE DATABASE [Aztu-Akademik]
  CONTAINMENT = NONE
 GO
@@ -71,7 +71,7 @@ ALTER DATABASE [Aztu-Akademik] SET TARGET_RECOVERY_TIME = 0 SECONDS
 GO
 USE [Aztu-Akademik]
 GO
-/****** Object:  Table [dbo].[Announcement]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Announcement]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,7 +92,7 @@ CREATE TABLE [dbo].[Announcement](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Article]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Article]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -120,7 +120,7 @@ CREATE TABLE [dbo].[Article](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Certificate]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Certificate]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -144,7 +144,7 @@ CREATE TABLE [dbo].[Certificate](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Contact]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Contact]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -165,7 +165,7 @@ CREATE TABLE [dbo].[Contact](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ContactType]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[ContactType]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -185,7 +185,7 @@ CREATE TABLE [dbo].[ContactType](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Country]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Country]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -204,7 +204,7 @@ CREATE TABLE [dbo].[Country](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Department]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Department]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -225,7 +225,7 @@ CREATE TABLE [dbo].[Department](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Dissertation]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Dissertation]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -246,7 +246,7 @@ CREATE TABLE [dbo].[Dissertation](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[EducationDegree]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[EducationDegree]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -265,7 +265,7 @@ CREATE TABLE [dbo].[EducationDegree](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[EducationForm]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[EducationForm]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -285,7 +285,7 @@ CREATE TABLE [dbo].[EducationForm](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[EducationLevel]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[EducationLevel]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -305,7 +305,7 @@ CREATE TABLE [dbo].[EducationLevel](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[EducationOrganization]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[EducationOrganization]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -326,7 +326,7 @@ CREATE TABLE [dbo].[EducationOrganization](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[EducationOrganizationType]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[EducationOrganizationType]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -345,7 +345,7 @@ CREATE TABLE [dbo].[EducationOrganizationType](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ExternalResearcher]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[ExternalResearcher]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -365,7 +365,7 @@ CREATE TABLE [dbo].[ExternalResearcher](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Faculty]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Faculty]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -385,7 +385,7 @@ CREATE TABLE [dbo].[Faculty](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[File]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[File]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -406,7 +406,7 @@ CREATE TABLE [dbo].[File](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Journal]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Journal]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -426,7 +426,7 @@ CREATE TABLE [dbo].[Journal](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Language]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Language]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -446,7 +446,7 @@ CREATE TABLE [dbo].[Language](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[LanguageLevels]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[LanguageLevels]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -466,7 +466,7 @@ CREATE TABLE [dbo].[LanguageLevels](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Log]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Log]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -492,7 +492,7 @@ CREATE TABLE [dbo].[Log](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ManagementExperience]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[ManagementExperience]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -515,7 +515,7 @@ CREATE TABLE [dbo].[ManagementExperience](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Operation]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Operation]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -530,7 +530,7 @@ CREATE TABLE [dbo].[Operation](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[PasswordReset]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[PasswordReset]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -551,7 +551,7 @@ CREATE TABLE [dbo].[PasswordReset](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Patent]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Patent]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -574,7 +574,7 @@ CREATE TABLE [dbo].[Patent](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Position]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Position]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -593,7 +593,7 @@ CREATE TABLE [dbo].[Position](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Profession]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Profession]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -613,7 +613,7 @@ CREATE TABLE [dbo].[Profession](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Project]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Project]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -637,7 +637,7 @@ CREATE TABLE [dbo].[Project](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_ArticleResearcher]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Rel_ArticleResearcher]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -659,7 +659,7 @@ CREATE TABLE [dbo].[Rel_ArticleResearcher](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_PatentResearcher]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Rel_PatentResearcher]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -681,7 +681,7 @@ CREATE TABLE [dbo].[Rel_PatentResearcher](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_ProjectResearcher]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Rel_ProjectResearcher]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -703,7 +703,7 @@ CREATE TABLE [dbo].[Rel_ProjectResearcher](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_Researcher_ResearcherArea]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Rel_Researcher_ResearcherArea]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -723,7 +723,7 @@ CREATE TABLE [dbo].[Rel_Researcher_ResearcherArea](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_ResearcherDegree]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Rel_ResearcherDegree]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -743,7 +743,7 @@ CREATE TABLE [dbo].[Rel_ResearcherDegree](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_TextbookResearcher]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Rel_TextbookResearcher]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -765,7 +765,7 @@ CREATE TABLE [dbo].[Rel_TextbookResearcher](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_ThesisResearcher]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Rel_ThesisResearcher]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -787,7 +787,7 @@ CREATE TABLE [dbo].[Rel_ThesisResearcher](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ResearchArea]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[ResearchArea]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -806,7 +806,7 @@ CREATE TABLE [dbo].[ResearchArea](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ResearcherEducation]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[ResearcherEducation]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -833,7 +833,7 @@ CREATE TABLE [dbo].[ResearcherEducation](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ResearcherLanguage]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[ResearcherLanguage]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -855,7 +855,7 @@ CREATE TABLE [dbo].[ResearcherLanguage](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ResearcherPosition]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[ResearcherPosition]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -879,7 +879,7 @@ CREATE TABLE [dbo].[ResearcherPosition](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Textbook]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Textbook]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -902,7 +902,7 @@ CREATE TABLE [dbo].[Textbook](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Thesis]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[Thesis]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -925,7 +925,7 @@ CREATE TABLE [dbo].[Thesis](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 12/10/2020 7:24:55 PM ******/
+/****** Object:  Table [dbo].[User]    Script Date: 12/14/2020 3:17:36 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1103,6 +1103,11 @@ ALTER TABLE [dbo].[Rel_PatentResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_Pat
 REFERENCES [dbo].[ExternalResearcher] ([id])
 GO
 ALTER TABLE [dbo].[Rel_PatentResearcher] CHECK CONSTRAINT [FK_Rel_PatentResearcher_ExternalResearcher]
+GO
+ALTER TABLE [dbo].[Rel_PatentResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_PatentResearcher_Patent] FOREIGN KEY([patent_id])
+REFERENCES [dbo].[Patent] ([id])
+GO
+ALTER TABLE [dbo].[Rel_PatentResearcher] CHECK CONSTRAINT [FK_Rel_PatentResearcher_Patent]
 GO
 ALTER TABLE [dbo].[Rel_PatentResearcher]  WITH CHECK ADD  CONSTRAINT [FK_Rel_PatentResearcher_User] FOREIGN KEY([int_author_id])
 REFERENCES [dbo].[User] ([id])
