@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Aztu-Akademik]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Database [Aztu-Akademik]    Script Date: 12/22/2020 10:58:57 PM ******/
 CREATE DATABASE [Aztu-Akademik]
  CONTAINMENT = NONE
 GO
@@ -71,7 +71,7 @@ ALTER DATABASE [Aztu-Akademik] SET TARGET_RECOVERY_TIME = 0 SECONDS
 GO
 USE [Aztu-Akademik]
 GO
-/****** Object:  Table [dbo].[Announcement]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Announcement]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -92,7 +92,7 @@ CREATE TABLE [dbo].[Announcement](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Article]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Article]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -120,7 +120,7 @@ CREATE TABLE [dbo].[Article](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Certificate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Certificate]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -144,7 +144,7 @@ CREATE TABLE [dbo].[Certificate](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Contact]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Contact]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -165,7 +165,7 @@ CREATE TABLE [dbo].[Contact](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ContactType]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[ContactType]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -185,7 +185,7 @@ CREATE TABLE [dbo].[ContactType](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Country]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Country]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -204,7 +204,7 @@ CREATE TABLE [dbo].[Country](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Department]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Department]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -225,7 +225,7 @@ CREATE TABLE [dbo].[Department](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Dissertation]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Dissertation]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -246,7 +246,7 @@ CREATE TABLE [dbo].[Dissertation](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[EducationDegree]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[EducationDegree]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -265,7 +265,7 @@ CREATE TABLE [dbo].[EducationDegree](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[EducationForm]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[EducationForm]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -285,7 +285,7 @@ CREATE TABLE [dbo].[EducationForm](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[EducationLevel]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[EducationLevel]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -305,7 +305,7 @@ CREATE TABLE [dbo].[EducationLevel](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[EducationOrganization]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[EducationOrganization]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -326,7 +326,7 @@ CREATE TABLE [dbo].[EducationOrganization](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[EducationOrganizationType]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[EducationOrganizationType]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -345,7 +345,7 @@ CREATE TABLE [dbo].[EducationOrganizationType](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ExternalResearcher]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[ExternalResearcher]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -365,7 +365,7 @@ CREATE TABLE [dbo].[ExternalResearcher](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Faculty]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Faculty]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -385,7 +385,7 @@ CREATE TABLE [dbo].[Faculty](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[File]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[File]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -406,7 +406,7 @@ CREATE TABLE [dbo].[File](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Journal]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Journal]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -426,7 +426,7 @@ CREATE TABLE [dbo].[Journal](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Language]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Language]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -446,7 +446,7 @@ CREATE TABLE [dbo].[Language](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[LanguageLevels]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[LanguageLevels]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -466,7 +466,7 @@ CREATE TABLE [dbo].[LanguageLevels](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Log]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Log]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -492,7 +492,7 @@ CREATE TABLE [dbo].[Log](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ManagementExperience]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[ManagementExperience]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -515,7 +515,7 @@ CREATE TABLE [dbo].[ManagementExperience](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Operation]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Operation]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -530,15 +530,17 @@ CREATE TABLE [dbo].[Operation](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[PasswordReset]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[PasswordReset]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [dbo].[PasswordReset](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[code] [nvarchar](100) NULL,
-	[hash] [nvarchar](max) NULL,
+	[code] [varchar](100) NULL,
+	[hash] [varchar](128) NULL,
 	[user_id] [int] NULL,
 	[create_date] [datetime] NULL,
 	[update_date] [datetime] NULL,
@@ -548,10 +550,12 @@ CREATE TABLE [dbo].[PasswordReset](
 (
 	[id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Patent]    Script Date: 12/19/2020 3:46:01 PM ******/
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Patent]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -574,7 +578,7 @@ CREATE TABLE [dbo].[Patent](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Position]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Position]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -593,7 +597,7 @@ CREATE TABLE [dbo].[Position](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Profession]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Profession]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -613,7 +617,7 @@ CREATE TABLE [dbo].[Profession](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Project]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Project]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -637,7 +641,7 @@ CREATE TABLE [dbo].[Project](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_ArticleResearcher]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Rel_ArticleResearcher]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -659,7 +663,7 @@ CREATE TABLE [dbo].[Rel_ArticleResearcher](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_PatentResearcher]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Rel_PatentResearcher]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -681,7 +685,7 @@ CREATE TABLE [dbo].[Rel_PatentResearcher](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_ProjectResearcher]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Rel_ProjectResearcher]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -703,7 +707,7 @@ CREATE TABLE [dbo].[Rel_ProjectResearcher](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_Researcher_ResearcherArea]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Rel_Researcher_ResearcherArea]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -723,7 +727,7 @@ CREATE TABLE [dbo].[Rel_Researcher_ResearcherArea](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_ResearcherDegree]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Rel_ResearcherDegree]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -743,7 +747,7 @@ CREATE TABLE [dbo].[Rel_ResearcherDegree](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_TextbookResearcher]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Rel_TextbookResearcher]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -765,7 +769,7 @@ CREATE TABLE [dbo].[Rel_TextbookResearcher](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Rel_ThesisResearcher]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Rel_ThesisResearcher]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -787,7 +791,7 @@ CREATE TABLE [dbo].[Rel_ThesisResearcher](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ResearchArea]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[ResearchArea]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -806,7 +810,7 @@ CREATE TABLE [dbo].[ResearchArea](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ResearcherEducation]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[ResearcherEducation]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -833,7 +837,7 @@ CREATE TABLE [dbo].[ResearcherEducation](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ResearcherLanguage]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[ResearcherLanguage]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -855,7 +859,7 @@ CREATE TABLE [dbo].[ResearcherLanguage](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[ResearcherPosition]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[ResearcherPosition]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -879,7 +883,7 @@ CREATE TABLE [dbo].[ResearcherPosition](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Textbook]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Textbook]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -902,7 +906,7 @@ CREATE TABLE [dbo].[Textbook](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Thesis]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[Thesis]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -925,7 +929,7 @@ CREATE TABLE [dbo].[Thesis](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[User]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Table [dbo].[User]    Script Date: 12/22/2020 10:58:58 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -977,121 +981,122 @@ SET IDENTITY_INSERT [dbo].[Operation] ON
 INSERT [dbo].[Operation] ([id], [name]) VALUES (1, N'Add')
 INSERT [dbo].[Operation] ([id], [name]) VALUES (2, N'Update')
 INSERT [dbo].[Operation] ([id], [name]) VALUES (3, N'Delete')
-INSERT [dbo].[Operation] ([id], [name]) VALUES (4, N'Login')
+INSERT [dbo].[Operation] ([id], [name]) VALUES (4, N'Sign In')
+INSERT [dbo].[Operation] ([id], [name]) VALUES (5, N'Sign Out')
 SET IDENTITY_INSERT [dbo].[Operation] OFF
 SET IDENTITY_INSERT [dbo].[User] ON 
 
 INSERT [dbo].[User] ([id], [first_name], [last_name], [patronymic], [image_address], [email], [password], [is_online], [last_seen], [create_date], [update_date], [delete_date], [status_id], [nationality_id], [citizenship_id], [role_id]) VALUES (1, N'Nijat', N'Mardanli', NULL, NULL, N'nicat@aztu.edu.az', N'nicat123', NULL, CAST(0x0000AC9600F80902 AS DateTime), CAST(0x0000AC8900FC2592 AS DateTime), NULL, NULL, NULL, NULL, NULL, 0)
 SET IDENTITY_INSERT [dbo].[User] OFF
-/****** Object:  Index [IX_Announcement_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Announcement_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Announcement_DeleteDate] ON [dbo].[Announcement]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Article_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Article_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Article_DeleteDate] ON [dbo].[Article]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Certificate_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Certificate_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Certificate_DeleteDate] ON [dbo].[Certificate]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Contact_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Contact_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Contact_DeleteDate] ON [dbo].[Contact]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ContactType_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_ContactType_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_ContactType_DeleteDate] ON [dbo].[ContactType]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Country_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Country_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Country_DeleteDate] ON [dbo].[Country]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Department_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Department_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Department_DeleteDate] ON [dbo].[Department]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Dissertation_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Dissertation_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Dissertation_DeleteDate] ON [dbo].[Dissertation]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_EducationDegree_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_EducationDegree_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_EducationDegree_DeleteDate] ON [dbo].[EducationDegree]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_EducationForm_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_EducationForm_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_EducationForm_DeleteDate] ON [dbo].[EducationForm]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_EducationLevel_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_EducationLevel_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_EducationLevel_DeleteDate] ON [dbo].[EducationLevel]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_EducationOrganization_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_EducationOrganization_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_EducationOrganization_DeleteDate] ON [dbo].[EducationOrganization]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_EducationOrganizationType_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_EducationOrganizationType_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_EducationOrganizationType_DeleteDate] ON [dbo].[EducationOrganizationType]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ExternalResearcher_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_ExternalResearcher_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_ExternalResearcher_DeleteDate] ON [dbo].[ExternalResearcher]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Faculty_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Faculty_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Faculty_DeleteDate] ON [dbo].[Faculty]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_File_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_File_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_File_DeleteDate] ON [dbo].[File]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Journal_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Journal_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Journal_DeleteDate] ON [dbo].[Journal]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Language_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Language_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Language_DeleteDate] ON [dbo].[Language]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_LanguageLevels_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_LanguageLevels_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_LanguageLevels_DeleteDate] ON [dbo].[LanguageLevels]
 (
 	[delete_date] ASC
@@ -1100,133 +1105,148 @@ GO
 SET ANSI_PADDING ON
 
 GO
-/****** Object:  Index [IX_Log_TableName]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Log_TableName]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Log_TableName] ON [dbo].[Log]
 (
 	[table_name] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Log_UserId]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Log_UserId]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Log_UserId] ON [dbo].[Log]
 (
 	[user_id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ManagementExperience_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_ManagementExperience_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_ManagementExperience_DeleteDate] ON [dbo].[ManagementExperience]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_PasswordReset_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_PasswordReset_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_PasswordReset_DeleteDate] ON [dbo].[PasswordReset]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Patent_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IX_PasswordReset_Hash]    Script Date: 12/22/2020 10:58:58 PM ******/
+CREATE NONCLUSTERED INDEX [IX_PasswordReset_Hash] ON [dbo].[PasswordReset]
+(
+	[hash] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_PasswordReset_UserId]    Script Date: 12/22/2020 10:58:58 PM ******/
+CREATE NONCLUSTERED INDEX [IX_PasswordReset_UserId] ON [dbo].[PasswordReset]
+(
+	[user_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_Patent_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Patent_DeleteDate] ON [dbo].[Patent]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Position_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Position_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Position_DeleteDate] ON [dbo].[Position]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Profession_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Profession_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Profession_DeleteDate] ON [dbo].[Profession]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Project_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Project_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Project_DeleteDate] ON [dbo].[Project]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Rel_ArticleResearcher_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Rel_ArticleResearcher_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Rel_ArticleResearcher_DeleteDate] ON [dbo].[Rel_ArticleResearcher]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Rel_PatentResearcher_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Rel_PatentResearcher_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Rel_PatentResearcher_DeleteDate] ON [dbo].[Rel_PatentResearcher]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Rel_ProjectResearcher_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Rel_ProjectResearcher_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Rel_ProjectResearcher_DeleteDate] ON [dbo].[Rel_ProjectResearcher]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Rel_Researcher_ResearcherArea_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Rel_Researcher_ResearcherArea_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Rel_Researcher_ResearcherArea_DeleteDate] ON [dbo].[Rel_Researcher_ResearcherArea]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Rel_ResearcherDegree_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Rel_ResearcherDegree_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Rel_ResearcherDegree_DeleteDate] ON [dbo].[Rel_ResearcherDegree]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Rel_TextbookResearcher_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Rel_TextbookResearcher_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Rel_TextbookResearcher_DeleteDate] ON [dbo].[Rel_TextbookResearcher]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Rel_ThesisResearcher_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Rel_ThesisResearcher_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Rel_ThesisResearcher_DeleteDate] ON [dbo].[Rel_ThesisResearcher]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ResearchArea_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_ResearchArea_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_ResearchArea_DeleteDate] ON [dbo].[ResearchArea]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ResearcherEducation_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_ResearcherEducation_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_ResearcherEducation_DeleteDate] ON [dbo].[ResearcherEducation]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ResearcherLanguage_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_ResearcherLanguage_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_ResearcherLanguage_DeleteDate] ON [dbo].[ResearcherLanguage]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_ResearcherPosition_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_ResearcherPosition_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_ResearcherPosition_DeleteDate] ON [dbo].[ResearcherPosition]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Textbook_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Textbook_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Textbook_DeleteDate] ON [dbo].[Textbook]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_Thesis_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_Thesis_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_Thesis_DeleteDate] ON [dbo].[Thesis]
 (
 	[delete_date] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-/****** Object:  Index [IX_User_DeleteDate]    Script Date: 12/19/2020 3:46:01 PM ******/
+/****** Object:  Index [IX_User_DeleteDate]    Script Date: 12/22/2020 10:58:58 PM ******/
 CREATE NONCLUSTERED INDEX [IX_User_DeleteDate] ON [dbo].[User]
 (
 	[delete_date] ASC
